@@ -4,27 +4,80 @@
  * SPDX-License-Identifier: MIT
  */
 
+
+/* THIS FILE WAS GENERATED!
+ *
+ * This file was generated automatically. You may or may not want to
+ * edit it directly.
+ */
+
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
 / {
-	keymap {
-		compatible = "zmk,keymap";
+    keymap {
+        compatible = "zmk,keymap";
 
-		default_layer {
-// ---------------------------------------------------------------------------------------------------------------------------------
-// |  ESC  |  Q  |  W  |  E   |  R   |  T   |                                          |  Y   |  U    |  I    |  O   |   P   |   \  |
-// |  TAB  |  A  |  S  |  D   |  F   |  G   |                                          |  H   |  J    |  K    |  L   |   ;   |   '  |
-// | SHIFT |  Z  |  X  |  C   |  V   |  B   | L SHIFT | L SHIFT |  | L SHIFT | L SHIFT |  N   |  M    |  ,    |  .   |   /   | CTRL |
-//                     | GUI  | DEL  | RET  |  SPACE  |   ESC   |  |   RET   |  SPACE  | TAB  | BSPC  | R-ALT |
-			bindings = <
-	&kp ESC   &kp Q &kp W &kp E &kp R &kp T                                                &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSLH
-	&kp TAB   &kp A &kp S &kp D &kp F &kp G                                                &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-	&kp LSHFT &kp Z &kp X &kp C &kp V &kp B &kp LSHFT &kp LSHFT        &kp LSHFT &kp LSHFT &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RCTRL
-	                 &kp LGUI &kp DEL &kp RET &kp SPACE &kp ESC        &kp RET  &kp SPACE  &kp TAB &kp BSPC &kp RALT
-			>;
+#define DEFAULT  0
+#define NUMBER   1
+#Define SYMBOL 	 2
+#define FUNCTION  	 3
+#define NAV    4
+#define SUPER	 5
 
-			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
-		};
-	};
+        default_layer {
+            bindings = <
+               &kp ESC   &kp Y   &kp P         &kp O      &kp U          &kp J                                                                           &kp K       &kp D   &kp L   &kp C   &kp W          &kp AMPS
+  &kp LEFT_PARENTHESIS   &kp I   &kp N         &kp E      &kp A     &kp PERIOD                                                                           &kp M       &kp H   &kp T   &kp S   &kp R  &kp SINGLE_QUOTE
+ &kp RIGHT_PARENTHESIS   &kp Q   &kp Z  &kp QUESTION  &kp SLASH      &kp COMMA                     &sl 5      &kp LEFT_ALT         &mo 3    &kp TAB      &kp B       &kp F   &kp G   &kp V   &kp X         &kp MINUS
+                                               &none     &tog 1  &kp BACKSPACE            &kp LEFT_SHIFT  &kp LEFT_CONTROL  &sk LEFT_GUI  &kp SPACE  &kp ENTER  &kp DELETE   &none
+            >;
+        };
+
+        layer_NUMBER {
+            bindings = <
+               &tog 0     &kp KP_NUMLOCK  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9   &kp NUMBER_0                                                                    &kp SLASH    &kp MINUS      &kp UP   &kp PLUS  &kp ASTERISK   &kp EXCLAMATION
+ &kp LEFT_PARENTHESIS   &kp LEFT_BRACKET  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6      &kp COMMA                                                                    &kp EQUAL     &kp LEFT    &kp DOWN  &kp RIGHT     &kp CARET  &kp GREATER_THAN
+             &kp RPAR  &kp RIGHT_BRACKET  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3     &kp PERIOD                     &mo 5  &kp LEFT_ALT          &sl 2    &kp TAB   &kp PIPE  &kp PERCENT  &kp DOLLAR   &kp HASH     &kp GRAVE     &kp LESS_THAN
+                                                               &none        &tog 1  &kp BACKSPACE            &kp LEFT_SHIFT     &kp LCTRL  &kp RIGHT_GUI  &kp SPACE  &kp ENTER   &kp DELETE      &trans
+            >;
+        };
+
+        layer_SYMBOL {
+            bindings = <
+ &trans  &trans  &trans  &trans  &trans  &trans                                            &trans  &trans  &trans  &trans  &trans  &trans
+ &trans  &trans  &trans  &trans  &trans  &trans                                            &trans  &trans  &trans  &trans  &trans  &trans
+ &trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                         &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        layer_FUNCTION {
+            bindings = <
+    &kp ESC           &kp F1     &kp F2      &kp F3       &kp F4      &kp F5                                                                                  &kp F6                &kp F7        &kp F8        &kp F9  &kp F10  &kp F11
+    &kp F12  &kp PRINTSCREEN  &kp K_CUT  &kp K_COPY  &kp K_PASTE  &kp INSERT                                                                    &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp K_VOL_DN  &kp K_VOL_UP      &kp   &trans
+ &kp K_REDO       &kp K_UNDO     &trans  &kp K_HELP       &trans         &kp                &tog 4          &kp LALT         &tog 3    &kp TAB      &kp K_PLAY_PAUSE            &kp K_STOP    &kp K_PREV    &kp K_NEXT   &trans   &trans
+                                             &trans       &trans  &kp K_UNDO            &kp LSHIFT  &kp LEFT_CONTROL  &kp RIGHT_GUI  &kp SPACE             &kp ENTER            &kp K_REDO        &trans
+            >;
+        };
+
+        layer_NAV {
+            bindings = <
+    &kp ESC      &trans  &trans  &trans  &trans  &trans                                            &kp PG_UP  &kp PG_UP    &kp UP    &kp TAB  &trans  &trans
+     &trans      &trans  &trans  &trans  &trans  &trans                                             &kp HOME   &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans
+ &kp K_REDO  &kp K_UNDO  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans     &trans  &kp PG_DN    &trans        &kp  &trans  &trans
+                                 &trans  &trans  &trans            &trans  &trans  &trans  &trans     &trans     &trans    &trans
+            >;
+        };
+
+        layer_SUPER {
+            bindings = <
+ &trans  &trans  &trans  &trans  &trans  &trans                                            &trans  &trans  &trans  &trans  &trans  &trans
+ &trans  &trans  &trans  &trans  &trans  &trans                                            &trans  &trans  &trans  &trans  &trans  &trans
+ &trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                         &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+    };
 };
