@@ -48,7 +48,7 @@
         layer_FUNCTION {
             bindings = <
     &kp ESC           &kp F1     &kp F2      &kp F3       &kp F4      &kp F5                                                                                  &kp F6                &kp F7        &kp F8        &kp F9  &kp F10  &kp F11
-    &kp F12  &kp PRINTSCREEN  &kp K_CUT  &kp K_COPY  &kp K_PASTE  &kp INSERT                                                                    &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp K_VOL_DN  &kp K_VOL_UP      &kp   &trans
+    &kp F12  &kp PRINTSCREEN  &kp K_CUT  &kp K_COPY  &kp K_PASTE  &kp INSERT                                                                    &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp K_VOL_DN  &kp K_VOL_UP   &trans   &trans
  &kp K_REDO       &kp K_UNDO     &trans  &kp K_HELP       &trans         &kp                &tog 4          &kp LALT         &tog 3    &kp TAB      &kp K_PLAY_PAUSE            &kp K_STOP    &kp K_PREV    &kp K_NEXT   &trans   &trans
                                              &trans       &trans  &kp K_UNDO            &kp LSHIFT  &kp LEFT_CONTROL  &kp RIGHT_GUI  &kp SPACE             &kp ENTER            &kp K_REDO        &trans
             >;
